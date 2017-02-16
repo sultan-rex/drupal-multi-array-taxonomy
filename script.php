@@ -1,6 +1,6 @@
 <?php
 
-$vid = db_query("SELECT vid FROM {taxonomy_vocabulary} where machine_name = 'menu'")->fetchField();
+$vid = taxonomy_vocabulary_machine_name_load('menu')->vid;
 if(empty($vid)){
 	taxonomy_vocabulary_save((object) array(
 	  'name' => 'menu',
