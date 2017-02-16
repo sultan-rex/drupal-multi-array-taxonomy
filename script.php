@@ -1,9 +1,13 @@
 <?php
-taxonomy_vocabulary_save((object) array(
-  'name' => 'menu',
-  'machine_name' => 'menu',
-));
+
 $vid = db_query("SELECT vid FROM {taxonomy_vocabulary} where machine_name = 'menu'")->fetchField();
+if(empty($vid)){
+	taxonomy_vocabulary_save((object) array(
+	  'name' => 'menu',
+	  'machine_name' => 'menu',
+	));
+	$vid = db_query("SELECT vid FROM {taxonomy_vocabulary} where machine_name = 'menu'")->fetchField();
+}
 
 $arr = variable_get('etsy');
 rotation($vid,$arr);
