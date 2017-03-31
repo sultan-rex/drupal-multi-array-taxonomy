@@ -1,2 +1,2 @@
 # drupal-multi-array-taxonomy
-create drupal taxonomy herarchy from three dimentional array
+create drupal hierarchical taxonomy from three dimentional array
