@@ -1,5 +1,6 @@
 <?php
 
+// vocabulary id is 'menu'
 $vid = taxonomy_vocabulary_machine_name_load('menu')->vid;
 if(empty($vid)){
 	taxonomy_vocabulary_save((object) array(
@@ -9,7 +10,7 @@ if(empty($vid)){
 	$vid = db_query("SELECT vid FROM {taxonomy_vocabulary} where machine_name = 'menu'")->fetchField();
 }
 
-$arr = variable_get('etsy');
+$arr = variable_get('etsy'); // three dimentional array ,here i get three dimentional array from variable_get which i stored before 
 rotation($vid,$arr);
 function rotation($vid,$array){
 	foreach ($array as $g_key => $g_value) {
